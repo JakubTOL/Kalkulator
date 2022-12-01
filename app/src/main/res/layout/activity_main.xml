@@ -5,11 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+<!--        Main window layout-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:background="#CB141515"
+        android:paddingVertical="16dp"
         android:id="@+id/buttons_layout">
 <!--        first row buttons-->
         <LinearLayout
@@ -25,6 +28,7 @@
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:textSize="32dp"
                 android:textColor="@color/white"
+                android:backgroundTint="#BAEC08AB"
                 android:layout_margin="12dp"
                 android:id="@+id/button_c"
                 android:text="C"
@@ -36,6 +40,7 @@
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:textSize="32dp"
                 android:textColor="@color/white"
+                android:backgroundTint="#A8A869E8"
                 android:layout_margin="12dp"
                 android:id="@+id/button_open_bracket"
                 android:text="("
@@ -47,6 +52,7 @@
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:textSize="32dp"
                 android:textColor="@color/white"
+                android:backgroundTint="#A8A869E8"
                 android:layout_margin="12dp"
                 android:id="@+id/button_close_bracket"
                 android:text=")"
@@ -79,6 +85,7 @@
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:textSize="32dp"
                 android:textColor="@color/white"
+                android:backgroundTint="#676565"
                 android:layout_margin="12dp"
                 android:id="@+id/button_7"
                 android:text="7"
@@ -89,6 +96,7 @@
                 app:cornerRadius="36dp"
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:textSize="32dp"
+                android:backgroundTint="#676565"
                 android:textColor="@color/white"
                 android:layout_margin="12dp"
                 android:id="@+id/button_8"
@@ -101,6 +109,7 @@
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:textSize="32dp"
                 android:textColor="@color/white"
+                android:backgroundTint="#676565"
                 android:layout_margin="12dp"
                 android:id="@+id/button_9"
                 android:text="9"
@@ -133,6 +142,7 @@
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:textSize="32dp"
                 android:textColor="@color/white"
+                android:backgroundTint="#676565"
                 android:layout_margin="12dp"
                 android:id="@+id/button_4"
                 android:text="4"
@@ -144,6 +154,7 @@
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:textSize="32dp"
                 android:textColor="@color/white"
+                android:backgroundTint="#676565"
                 android:layout_margin="12dp"
                 android:id="@+id/button_5"
                 android:text="5"
@@ -155,6 +166,7 @@
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:textSize="32dp"
                 android:textColor="@color/white"
+                android:backgroundTint="#676565"
                 android:layout_margin="12dp"
                 android:id="@+id/button_6"
                 android:text="6"
@@ -187,6 +199,7 @@
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:textSize="32dp"
                 android:textColor="@color/white"
+                android:backgroundTint="#676565"
                 android:layout_margin="12dp"
                 android:id="@+id/button_1"
                 android:text="1"
@@ -198,6 +211,7 @@
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:textSize="32dp"
                 android:textColor="@color/white"
+                android:backgroundTint="#676565"
                 android:layout_margin="12dp"
                 android:id="@+id/button_2"
                 android:text="2"
@@ -209,6 +223,7 @@
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:textSize="32dp"
                 android:textColor="@color/white"
+                android:backgroundTint="#676565"
                 android:layout_margin="12dp"
                 android:id="@+id/button_3"
                 android:text="3"
@@ -241,6 +256,7 @@
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:textSize="20dp"
                 android:textColor="@color/white"
+                android:backgroundTint="#BAEC08AB"
                 android:layout_margin="12dp"
                 android:id="@+id/button_clear"
                 android:text="AC"
@@ -252,6 +268,7 @@
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:textSize="32dp"
                 android:textColor="@color/white"
+                android:backgroundTint="#676565"
                 android:layout_margin="12dp"
                 android:id="@+id/button_0"
                 android:text="0"
@@ -263,6 +280,7 @@
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
                 android:textSize="32dp"
                 android:textColor="@color/white"
+                android:backgroundTint="#A8A869E8"
                 android:layout_margin="12dp"
                 android:id="@+id/button_point"
                 android:text="."
@@ -281,6 +299,10 @@
                 />
 
         </LinearLayout>
+
+
+
+
     </LinearLayout>
 
 
