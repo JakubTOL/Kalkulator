@@ -1,15 +1,16 @@
 package com.example.kalkulator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.button.MaterialButton;
-import org.mozilla.javascript.Context;
+
 import org.mozilla.javascript.Scriptable;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -98,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try {
             Context context = Context.enter();
             context.setOptimizationLevel(-1);
-            Scriptable scriptable = context.init.StandardObjects();
+            Scriptable scriptable = context.initStandardObjects();
             String CalcResult = context.evaluateString(scriptable,data,"Javascript",1,null);
             if(CalcResult.endsWith(".0")){
                 CalcResult = CalcResult.replace(".0","");
