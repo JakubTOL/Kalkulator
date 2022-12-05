@@ -5,6 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
+<!--        type view-->
+    <TextView
+        android:id="@+id/solution_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="40dp"
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:layout_above="@id/result_view"
+        android:layout_margin="20dp"></TextView>
+<!--        result view-->
+    <TextView
+        android:id="@+id/result_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="64dp"
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:layout_above="@id/buttons_layout"
+        android:layout_margin="20dp"></TextView>
+
 <!--        Main window layout-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -254,12 +278,12 @@
                 android:layout_height="72dp"
                 app:cornerRadius="36dp"
                 style="@style/ShapeAppearanceOverlay.Material3.FloatingActionButton"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textColor="@color/white"
                 android:backgroundTint="#BAEC08AB"
                 android:layout_margin="12dp"
                 android:id="@+id/button_clear"
-                android:text="AC"
+                android:text="DEL"
                 />
             <com.google.android.material.button.MaterialButton
                 android:layout_width="72dp"
