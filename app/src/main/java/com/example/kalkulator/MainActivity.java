@@ -1,6 +1,6 @@
 package com.example.kalkulator;
 
-import android.content.Context;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
-
+import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Scriptable;
 
 
@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         assignID(button9, R.id.button_9);
         assignID(buttonClear, R.id.button_clear);
         assignID(buttonPoint, R.id.button_point);
-
 
     }
 
@@ -94,22 +93,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             resultView.setText(CalcResult);
         }
 
-        }
+    }
+
     String getResult(String data){
         try {
             Context context = Context.enter();
             context.setOptimizationLevel(-1);
             Scriptable scriptable = context.initStandardObjects();
-            String CalcResult = context.evaluateString(scriptable,data,"Javascript",1,null);
+            String CalcResult = (String) context.evaluateString(scriptable,data,"Javascript",1,null).toString();
             if(CalcResult.endsWith(".0")){
                 CalcResult = CalcResult.replace(".0","");
             }
             return CalcResult;
-        }
-        catch (Exception e){
+        } catch (Exception e){
             return "Error!";
         }
-
-        return "Calculated";
     }
 }
