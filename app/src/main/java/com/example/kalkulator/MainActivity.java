@@ -2,11 +2,14 @@ package com.example.kalkulator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
+import org.mozilla.javascript.Context;
+import org.mozilla.javascript.Scriptable;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-
+// get btn id onClick event
     void assignID(MaterialButton btn, int id){
         btn = findViewById(id);
         btn.setOnClickListener(this);
@@ -55,8 +58,57 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+//        call action on clik btn
         MaterialButton button = (MaterialButton) view;
         String buttonText = button.getText().toString();
-        solutionView.setText(buttonText);
+//        display btn text in solutionView
+//        solutionView.setText(buttonText);
+//        data to calculate
+        String CalcData = solutionView.getText().toString();
+
+//      function btns events
+        if(buttonText.equals("DEL")){
+            solutionView.setText("");
+            resultView.setText("0");
+            return;
+        }
+
+        if(buttonText.equals("=")){
+            solutionView.setText(resultView.getText());
+            return;
+        }
+
+        if(buttonText.equals("C")){
+            CalcData = CalcData.substring(0,CalcData.length()-1);
+        }
+        else {
+            CalcData += buttonText;
+        }
+
+        solutionView.setText(CalcData);
+
+        String CalcResult = getResult(CalcData);
+
+        if (!CalcResult.equals("Err")){
+            resultView.setText(CalcResult);
+        }
+
+        }
+    String getResult(String data){
+        try {
+            Context context = Context.enter();
+            context.setOptimizationLevel(-1);
+            Scriptable scriptable = context.init.StandardObjects();
+            String CalcResult = context.evaluateString(scriptable,data,"Javascript",1,null);
+            if(CalcResult.endsWith(".0")){
+                CalcResult = CalcResult.replace(".0","");
+            }
+            return CalcResult;
+        }
+        catch (Exception e){
+            return "Error!";
+        }
+
+        return "Calculated";
     }
 }
