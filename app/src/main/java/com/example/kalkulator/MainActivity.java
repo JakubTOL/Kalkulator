@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-//        call action on clik btn
+//        call action on click btn
         MaterialButton button = (MaterialButton) view;
         String buttonText = button.getText().toString();
 //        display btn text in solutionView

@@ -148,7 +148,7 @@
                 android:layout_margin="12dp"
                 android:id="@+id/button_multiply"
                 android:backgroundTint="#C61C1C"
-                android:text="X"
+                android:text="*"
                 />
 
         </LinearLayout>
